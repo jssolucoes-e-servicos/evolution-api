@@ -37,7 +37,7 @@ LOG:
     - DEBUG
     - INFO
     - LOG
-    - VERBOSE
+    #- VERBOSE
     - DARK
     - WEBHOOKS
   COLOR: true
@@ -52,7 +52,7 @@ DEL_TEMP_INSTANCES: true # Delete instances with status closed on start
 # Seesion Files Providers
 # Provider responsible for managing credentials files and WhatsApp sessions.
 PROVIDER:
-  ENABLED: true
+  ENABLED: false
   HOST: 127.0.0.1
   PORT: 5656
   PREFIX: evolution
@@ -73,17 +73,17 @@ CLEAN_STORE:
 
 # Permanent data storage
 DATABASE:
-  ENABLED: false
+  ENABLED: true
   CONNECTION:
-    URI: "mongodb+srv://Jonadab:91238983Jb@cluster0.6qko5uu.mongodb.net/"
-    DB_PREFIX_NAME: evolution
+    URI: "mongodb+srv://smartapi:jsssolucoes_522576@cluster0.ejnyb.mongodb.net"
+    DB_PREFIX_NAME: evo_
   # Choose the data you want to save in the application's database or store
   SAVE_DATA:
-    INSTANCE: false
+    INSTANCE: true
     NEW_MESSAGE: false
     MESSAGE_UPDATE: false
-    CONTACTS: false
-    CHATS: false
+    CONTACTS: true
+    CHATS: true
 
 RABBITMQ:
   ENABLED: false
@@ -181,7 +181,7 @@ WEBHOOK:
 
 CONFIG_SESSION_PHONE:
   # Name that will be displayed on smartphone connection
-  CLIENT: "Evolution API"
+  CLIENT: "smartChat"
   NAME: Chrome # Chrome | Firefox | Edge | Opera | Safari
 
 # Set qrcode display limit
@@ -190,7 +190,7 @@ QRCODE:
   COLOR: "#198754"
 
 TYPEBOT:
-  API_VERSION: "old" # old | latest
+  API_VERSION: "latest" # old | latest
   KEEP_OPEN: true
 
 CHATWOOT:
@@ -202,14 +202,14 @@ CHATWOOT:
     # This db connection is used to import messages from whatsapp to chatwoot database
     DATABASE:
       CONNECTION:
-        URI: "postgres://user:password@hostname:port/dbname?sslmode=disable"
+        URI: "redis://default:DEV1@jssolucoes@185.209.228.34:6379/evolution_api?sslmode=disable"
     PLACEHOLDER_MEDIA_MESSAGE: true
 
 # Cache to optimize application performance
 CACHE:
   REDIS:
     ENABLED: false
-    URI: "redis://localhost:6379"
+    URI: "redis://default:DEV1@jssolucoes@185.209.228.34:6379"
     PREFIX_KEY: "evolution"
     TTL: 604800
     SAVE_INSTANCES: false
@@ -225,7 +225,7 @@ AUTHENTICATION:
   # Define a global apikey to access all instances
   API_KEY:
     # OBS: This key must be inserted in the request header to create an instance.
-    KEY: B6D711FCDE4D4FD5936544120E713976
+    KEY: eb84a751ddfff33b557694b96d994adbbf94dfaa
   # Expose the api key on return from fetch instances
   EXPOSE_IN_FETCH_INSTANCES: true
   # Set the secret key to encrypt and decrypt your token and its expiration time.

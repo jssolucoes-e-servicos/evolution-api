@@ -11,7 +11,7 @@ export const swaggerRouter = router.use('/docs', swaggerUi.serve).get(
   '/docs',
   swaggerUi.setup(document, {
     customCssUrl: '/css/dark-theme-swagger.css',
-    customSiteTitle: 'Evolution API',
+    customSiteTitle: 'smartChat API',
     customfavIcon: '/images/logo.svg',
   }),
 );
