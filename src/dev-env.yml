@@ -7,7 +7,7 @@
 # Choose the server type for the application
 SERVER:
   TYPE: http # https
-  PORT: 8080 # 443
+  PORT: 7999 # 443
   URL: localhost
   DISABLE_MANAGER: false
   DISABLE_DOCS: false
